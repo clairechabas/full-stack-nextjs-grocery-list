@@ -90,7 +90,10 @@ export const CardForm: NextPage<CardFormProps> = ({
   submit,
 }) => {
   return (
-    <div className='bg-white w-5/6 md:w-4/6 lg:w-3/6 xl:w-2/6 rounded-lg drop-shadow-md mt-4'>
+    <form 
+      className='bg-white w-5/6 md:w-4/6 lg:w-3/6 xl:w-2/6 rounded-lg drop-shadow-md mt-4'
+      onSubmit={submit}
+    >
       <div className='relative'>
         <input 
           type='text'
@@ -101,8 +104,7 @@ export const CardForm: NextPage<CardFormProps> = ({
         />
         <button
           className='absolute p-2 text-white -translate-y-1/2 bg-blue-600 rounded-full top-1/2 right-4'
-          type='button'
-          onClick={submit}
+          type='submit'
         >
           <svg
             className="w-4 h-4"
@@ -120,6 +122,6 @@ export const CardForm: NextPage<CardFormProps> = ({
           </svg>
         </button>
       </div>
-    </div>
+    </form>
   )
 }
