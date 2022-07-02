@@ -11,6 +11,8 @@ import { Context } from './context'
 // `Queries` are responsible for fetching data.
 // `Mutations` are responsible for making changes to the data (server-side).
 export const serverRouter = trpc
+  // We use our context data type as a generic in our router 
+  // this way we have the typed context object (to have access to our prisma instance)
   .router<Context>()
   .query('findAll', {
     resolve: async ({ ctx }) => {
